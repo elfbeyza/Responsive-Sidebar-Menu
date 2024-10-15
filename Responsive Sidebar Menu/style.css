@@ -1,0 +1,151 @@
+*{
+   margin: 0;
+   padding: 0;
+   box-sizing:border-box;
+   list-style:none;
+   text-decoration: none;
+}
+
+.main{
+    width: 100%;
+    background-color: #97FEF4;
+}
+.side-navbar{
+    position: fixed;
+    height: 100vh;
+    width: 260px;
+    background: #d49a6e;
+    overflow: hidden;
+    transition: 0.5s ease;
+}
+.side-navbar ul{
+    top:0;
+    left: 0;
+    width: 100%;
+}
+.side-navbar ul li{
+    width: 100%;
+}
+.side-navbar ul li:hover{
+    background:#ac7853;
+}
+.side-navbar ul li:first-child{
+    margin-bottom: 2rem;
+    background: none;
+}
+.side-navbar ul li a{
+    width: 100%;
+    display: flex;
+    color:black;
+}
+.side-navbar ul li a .icon{
+    min-width: 60px;
+    display: block;
+    font-size: 25px;
+    line-height: 60px;
+    height: 60px;
+    text-align: center;
+}
+.side-navbar ul li a .text{
+    display: block;
+    padding: 0 10px;
+    line-height: 60px;
+    height: 60px;
+    white-space: nowrap;
+}
+.content{
+    position: absolute;
+    width: calc(100% - 260px);
+    left: 260px;
+    min-height: 100vh;
+    transition: 0.5s ease;
+}
+.image-container img{
+    max-width: 100%; 
+    height: auto;    
+}
+.overlay-text{
+    position: absolute;
+    top: 13%;        
+    left: 5%;            
+    color: rgb(255, 255, 255);   
+    text-shadow: 0 2px 5px rgb(0 0 0/10%);     
+    text-align: left;   
+    padding: 10px;
+    animation-name: fontChange;
+    animation-duration: 6s;
+    animation-iteration-count: infinite;
+}
+.overlay-text h1{
+    font-size: 65px;
+}
+.overlay-text p{
+    font-size: 25px;
+}
+  @keyframes fontChange {
+    0% {
+      font-family: 'Major Mono Display', monospace;
+    }
+    30% {
+      font-family: 'Kaushan Script', cursive;
+    }
+    50% {
+      font-family: 'Lobster', cursive;
+    }
+    70% {
+      font-family: 'Ranchers', cursive;
+    }
+    90% {
+      font-family: 'Bitter', serif;
+    }
+    100% {
+      font-family: 'Major Mono Display', monospace;
+    }
+}
+.top-navbar{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 7px 20px;
+    box-shadow: 0 2px 5px rgba(104, 104, 104, 0.1);
+}
+.user-text{
+    font-size: 25px;
+}
+.profile img{
+    width: 45px;
+    height: 45px;
+    object-fit:contain;
+    object-position: center;
+    border-radius: 50%;
+    cursor: pointer;
+}
+#menu-icon{
+    font-size: 34px;
+    cursor: pointer;
+}
+.content.active{
+    width: calc(100% - 60px);
+    left: 60px;
+}
+.side-navbar.active{
+    width: 60px;
+}
+@media (max-width: 768px){
+    .content{
+        width: 100%;
+        left: 0;
+    }
+    .side-navbar{
+        width: 60px;
+        left: -60px;
+    }
+    .content.active{
+        width: calc(100% - 60px);
+        left: 60px;
+    }
+    .side-navbar.active{
+        left:0;
+    }
+}
